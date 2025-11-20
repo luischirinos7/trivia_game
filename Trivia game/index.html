@@ -7,6 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Trivia</h1>
+            <p>Ingresa tu nombre y configura la partida (5-20 preguntas)</p>
+        </header>
+        <form id="configForm" class="grid mt-12>\"></form>
+        <div>
+          <label for="playerName">Nombre del jugador (2-20 caracteres) *</label>
+          <input id="playerName" type="text" minlength="2" maxlength="20" placeholder="Ej: Luis" required />
+          <div id="nameError" class="small" style="color:var(--danger);display:none">Nombre inválido</div>
+        </div>
+        <div>
+          <label for="questionCount">Cantidad de preguntas (5-20) *</label>
+          <input id="questionCount" type="number" min="5" max="20" value="5" required />
+          <div id="countError" class="small" style="color:var(--danger);display:none">Debe ser entre 5 y 20</div>
+        </div>
+        <div>
+          <label for="difficulty">Dificultad</label>
+          <select id="difficulty">
+            <option value="">Mixtas</option>
+            <option value="easy">Fácil</option>
+            <option value="medium">Media</option>
+            <option value="hard">Difícil</option>
+          </select>
+        </div>
+        <div>
+          <label for="category">Categoría</label>
+          <select id="category">
+            <option value="">Mixtas (todas)</option>
+            <option value="9">Cultura general</option>
+            <option value="11">Peliculas</option>
+            <option value="18">Computacion</option>
+            <option value="21">Deportes</option>
+            <option value="23">Historia</option>
+          </select>
+        </div>
+        <div class="full center">
+          <button id="startBtn" type="submit" class="btn">Iniciar partida</button>
+        </div>
+        <div class="full small">
+          <label><input id="translateToggle" type="checkbox" checked/> Traducir preguntas y opciones al español (puede tardar unos segundos)</label>
+        </div>
+    </form>
+</div>        
     <script src="script.js"></script>
 </body>
 </html>
