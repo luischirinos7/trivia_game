@@ -72,3 +72,126 @@ label{
     align-items:center;
     justify-content:center;
 }
+.center{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    justify-content:center
+}
+.mt-12{
+    margin-top:12px
+}
+.hide{
+    display:none
+}
+.game-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+.progress{
+    font-size:14px;
+    color:var(--muted)
+}
+.timer{
+    font-weight:700;
+    padding:8px 12px;
+    border-radius:10px;
+    background:#f3f6fb
+}
+.timer.warning{
+    background:#fff1f0;
+    color:var(--danger);
+    border:1px solid rgba(229,57,53,0.1)
+}
+.question{
+    margin-top:14px;
+    font-size:18px;
+    line-height:1.4;
+}
+.options{
+    margin-top:14px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.option-btn{
+    text-align:left;
+    padding:12px 14px;
+    border-radius:10px;
+    border:1px solid #e6e9ef;
+    background:#fff;
+    cursor:pointer;
+    font-size:15px;
+    transition:transform .06s ease, box-shadow .06s ease;
+}
+.option-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(10,20,50,0.04);
+}
+.option-btn[disabled]{
+    opacity:.85;
+    cursor:default;
+}
+.correct{
+    background:linear-gradient(90deg,#e6f7ea,#dff6ea);
+    border-color:rgba(46,125,50,0.12);
+}
+.incorrect{
+    background:linear-gradient(90deg,#fff2f2,#fff0f0);
+    border-color:rgba(229,57,53,0.08);
+}
+.small{
+    font-size:13px;
+    color:var(--muted);
+}
+.loader{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    border:3px solid rgba(11,132,255,0.18);
+    border-top-color:var(--accent);animation:spin .9s linear infinite;
+    margin-right:8px;vertical-align:middle;
+}
+.results{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:12px;
+}
+.result-box{
+    padding:12px;
+    border-radius:10px;
+    background:#fbfdff;
+    border:1px solid #eef6ff;
+}
+footer{
+    margin-top:14px;
+    display:flex;
+    gap:8px;
+    justify-content:flex-end;
+}
+.translate-warning{
+    color:var(--danger);
+    font-size:13px;
+    margin-top:8px;
+}
+@media (max-width:720px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+    .game-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+    .results{
+        grid-template-columns:1fr;
+    }
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.full{
+    grid-column:1 / -1;
+}
