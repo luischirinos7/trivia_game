@@ -8,11 +8,12 @@
 </head>
 <body>
     <div class="container">
+        <div id="configCard" class="card">
         <header>
             <h1>Trivia</h1>
             <p>Ingresa tu nombre y configura la partida (5-20 preguntas)</p>
         </header>
-        <form id="configForm" class="grid mt-12>\"></form>
+        <form id="configForm" class="grid mt-12">
         <div>
           <label for="playerName">Nombre del jugador (2-20 caracteres) *</label>
           <input id="playerName" type="text" minlength="2" maxlength="20" placeholder="Ej: Luis" required />
@@ -49,8 +50,76 @@
         <div class="full small">
           <label><input id="translateToggle" type="checkbox" checked/> Traducir preguntas y opciones al español (puede tardar unos segundos)</label>
         </div>
-    </form>
-</div>        
+      </form>    
+    </div>
+    <div id="gameCard" class="card hide" style="margin-top:14px">
+      <div class="game-header">
+        <div>
+          <div class="progress small" id="progressText">Pregunta 1 de 10</div>
+          <div class="small" id="playerInfo">Jugador: —</div>
+        </div>
+        <div class="center">
+          <div id="timer" class="timer">20 s</div>
+        </div>
+      </div>
+
+      <div id="loadingArea" class="mt-12 center hide">
+        <span class="loader"></span><span id="loadingText">Cargando preguntas…</span>
+      </div>
+
+      <div id="questionArea" class="mt-12 hide">
+        <div id="translateNotice" class="translate-warning hide">No se pudo traducir; mostrando texto en inglés.</div>
+        <div id="questionText" class="question">Pregunta...</div>
+        <div id="options" class="options" role="list"></div>
+        </div>
+
+      <footer>
+        <div class="small" id="scoreDisplay">Puntuación: 0 | Correctas: 0 | Incorrectas: 0</div>
+      </footer>
+    </div>
+
+    <div id="resultsCard" class="card hide" style="margin-top:14px">
+      <header>
+        <h1>Resultados</h1>
+        <p id="resultsSubtitle" class="small">Resumen de la partida</p>
+      </header>
+
+      <div class="results mt-12">
+        <div class="result-box">
+          <div class="small">Jugador</div>
+          <div id="resName" style="font-weight:700;font-size:18px">—</div>
+        </div>
+        <div class="result-box">
+          <div class="small">Puntuación total</div>
+          <div id="resScore" style="font-weight:700;font-size:18px">0</div>
+        </div>
+
+        <div class="result-box">
+          <div class="small">Respuestas correctas</div>
+          <div id="resCorrect" style="font-weight:700;font-size:18px">0 / 0</div>
+        </div>
+        <div class="result-box">
+          <div class="small">Porcentaje de aciertos</div>
+          <div id="resPercent" style="font-weight:700;font-size:18px">0%</div>
+        </div>
+
+        <div class="result-box">
+          <div class="small">Tiempo total empleado</div>
+          <div id="resTimeTotal" style="font-weight:700;font-size:18px">0 s</div>
+        </div>
+        <div class="result-box">
+          <div class="small">Tiempo promedio por pregunta</div>
+          <div id="resTimeAvg" style="font-weight:700;font-size:18px">0 s</div>
+        </div>
+      </div>
+
+      <footer style="margin-top:14px">
+        <button id="restartSame" class="btn">Nueva partida (misma config)</button>
+        <button id="restartConfig" class="btn secondary">Cambiar configuración</button>
+        <button id="finishBtn" class="btn secondary">Finalizar</button>
+      </footer>
+    </div>
+</div>    
     <script src="script.js"></script>
 </body>
 </html>
